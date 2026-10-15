@@ -32,8 +32,12 @@ The orchestrator pattern also means the system adapts. It doesn't run the same f
 
 ## Run it
 
-This is built as a Claude artifact — it runs directly in the Claude.ai interface without a backend. To run it locally, paste `App.jsx` into a Vite React project and add your Anthropic API key handling.
+This repository contains the interface prototype originally built as a Claude artifact. It is not yet packaged as a standalone local application.
 
-## What's next
+For local or public deployment, route all Anthropic API requests through a server-side endpoint. Never place an API key in React source code, browser storage, or a `VITE_*` environment variable, because browser-delivered values are visible to users.
 
-This is a prototype. The architecture is solid — the next meaningful upgrade is memory across decisions, so the system can track patterns in how you think and flag recurring blind spots over time.
+A production implementation should:
+
+- Store API credentials only in server-side environment variables.
+- Validate and limit incoming requests.
+- Return only the required model response to the frontend.
