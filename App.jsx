@@ -383,6 +383,7 @@ Rules:
                 onChange={(event) =>
                   setDecision(event.target.value)
                 }
+                maxLength={2000}
                 placeholder="Describe your decision. Be specific — vague input gives vague output."
                 style={{
                   width: "100%",
